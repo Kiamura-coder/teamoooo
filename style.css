@@ -1,0 +1,232 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:wght@400;700&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(135deg, #ffd1dc 0%, #ff6fa3 100%);
+  color: #330022;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Tela de entrada */
+.entrada {
+  height: 100vh;
+  width: 100vw;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  position: relative;
+  z-index: 20;
+  text-align: center;
+  color: #a33157;
+  font-size: 1.6rem;
+  padding: 20px;
+}
+
+.coracao-entrada {
+  font-size: 9rem;
+  cursor: pointer;
+  color: #ff86ab;
+  text-shadow:
+    0 0 5px #ffb6c1,
+    0 0 10px #ff7a9d,
+    0 0 20px #ff5f85,
+    0 0 30px #ff4d75;
+  transition: transform 0.3s ease;
+  user-select: none;
+  animation: pulse 2s infinite;
+  border-radius: 50%;
+  box-shadow:
+    0 0 20px rgba(255, 111, 163, 0.7),
+    inset 0 0 15px #ff6fa3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 130px;
+  height: 130px;
+}
+
+.coracao-entrada:active,
+.coracao-entrada:focus {
+  transform: scale(0.9);
+  outline: none;
+}
+
+.texto-entrada {
+  margin-top: 20px;
+  font-family: 'Great Vibes', cursive;
+  font-size: 2rem;
+  color: #ff5f85;
+  user-select: none;
+}
+
+.contador {
+  margin-top: 10px;
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #ff2d55;
+  user-select: none;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    text-shadow:
+      0 0 15px #ff6fa3,
+      0 0 30px #ff6fa3;
+  }
+  50% {
+    transform: scale(1.15);
+    text-shadow:
+      0 0 30px #ff2d55,
+      0 0 60px #ff2d55;
+  }
+}
+
+/* Conteúdo principal */
+.container {
+  max-width: 450px;
+  background: rgba(255, 182, 213, 0.15);
+  backdrop-filter: blur(12px);
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(255, 105, 180, 0.5);
+  color: #4a002f;
+  position: relative;
+  z-index: 20;
+  text-align: center;
+}
+
+.titulo {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3.8rem;
+  margin-bottom: 20px;
+  color: #ff2d55;
+  text-shadow: 0 0 10px #ff7a9d;
+}
+
+.texto-intro {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin-bottom: 30px;
+  color: #7a1441;
+  font-weight: 500;
+}
+
+.btn-surpresa,
+.btn-voltar {
+  background: #ff3b71;
+  border: none;
+  padding: 15px 40px;
+  border-radius: 30px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(255, 59, 113, 0.7);
+  transition: background 0.3s ease;
+  margin: 10px 0 0;
+}
+
+.btn-surpresa:hover,
+.btn-voltar:hover,
+.btn-surpresa:focus,
+.btn-voltar:focus {
+  background: #e72d5c;
+  outline: none;
+}
+
+.surpresa {
+  margin-top: 25px;
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.6rem;
+  font-style: italic;
+  color: #ff5f85;
+  animation: fadeInUp 1.5s ease forwards;
+}
+
+.texto-amor {
+  margin-top: 25px;
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.8rem;
+  color: #ff2d55;
+  animation: fadeInUp 2s ease forwards;
+}
+
+/* Animação do fadeInUp */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fundo com corações flutuantes */
+.coracoes-fundo,
+.flores-fundo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  overflow: visible;
+  z-index: 10;
+}
+
+.coracoes-fundo span,
+.flores-fundo span {
+  position: absolute;
+  opacity: 0.85;
+  animation-name: flutuar;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  filter: drop-shadow(0 0 2px #ff2d55);
+}
+
+/* Corações com gradiente e sombra */
+.coracoes-fundo span {
+  font-size: 26px;
+  color: #ff5f85;
+  text-shadow:
+    0 0 5px #ff7a9d,
+    0 0 10px #ff2d55;
+}
+
+/* Flores com gradiente e sombra */
+.flores-fundo span {
+  font-size: 28px;
+  color: #ff99bb;
+  text-shadow:
+    0 0 7px #ff7a9d,
+    0 0 14px #ff2d55;
+}
+
+@keyframes flutuar {
+  0% {
+    transform: translateY(100vh) translateX(0) rotate(0deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-10vh) translateX(15px) rotate(360deg);
+    opacity: 0;
+  }
+}
